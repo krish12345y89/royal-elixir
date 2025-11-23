@@ -7,6 +7,7 @@ const SkincareHub = () => {
   const [activeTab, setActiveTab] = useState('all');
   const footerRef = useRef(null);
 
+  
   useEffect(() => {
     // Mock data - in real app, this would come from an API
     setFeaturedProducts([
