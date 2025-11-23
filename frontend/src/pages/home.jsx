@@ -5,7 +5,6 @@ const SkincareHub = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [skinTypes, setSkinTypes] = useState([]);
   const [activeTab, setActiveTab] = useState('all');
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -109,22 +108,14 @@ const SkincareHub = () => {
               <i className="fas fa-spa"></i>
               <span className="brand-name">Royal Elixir</span>
             </div>
-            <nav className={`nav ${mobileNavOpen ? 'open' : ''}`}>
-              <a href="#products" onClick={() => setMobileNavOpen(false)}>Products</a>
-              <a href="#routines" onClick={() => setMobileNavOpen(false)}>Routines</a>
-              <a href="#ingredients" onClick={() => setMobileNavOpen(false)}>Ingredients</a>
-              <a href="#blog" onClick={() => setMobileNavOpen(false)}>Blog</a>
-              <a href="#about" onClick={() => setMobileNavOpen(false)}>About</a>
+            <nav className="nav">
+              <a href="#products">Products</a>
+              <a href="#routines">Routines</a>
+              <a href="#ingredients">Ingredients</a>
+              <a href="#blog">Blog</a>
+              <a href="#about">About</a>
             </nav>
             <div className="nav-actions">
-              <button
-                className="menu-toggle"
-                aria-label="Toggle menu"
-                onClick={() => setMobileNavOpen(open => !open)}
-                aria-expanded={mobileNavOpen}
-              >
-                <i className="fas fa-bars" aria-hidden="true"></i>
-              </button>
               <button className="search-btn">
                 <i className="fas fa-search"></i>
               </button>
