@@ -305,6 +305,9 @@ input, textarea, select { border-radius: 12px; border: 1px solid rgba(10,14,42,0
   align-items: center;
 }
 
+/* Hide mobile menu toggle on larger screens by default */
+.menu-toggle { display: none; }
+
 .search-btn, .cart-btn, .account-btn {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(201, 169, 106, 0.3);
@@ -1331,8 +1334,22 @@ input, textarea, select { border-radius: 12px; border: 1px solid rgba(10,14,42,0
   .container { padding: 0 1rem; }
   .nav { gap: 1.2rem; }
   .nav a { font-size: 1rem; }
-  .nav { display: none; }
+  /* make the nav visible as a compact, horizontally scrollable bar on small screens */
+  .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 0.85rem;
+    align-items: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.4rem 0;
+    background: transparent;
+    position: relative;
+    white-space: nowrap;
+  }
+  .nav a { padding: 0.45rem 0.6rem; white-space: nowrap; }
   .menu-toggle { display: inline-flex; background: transparent; border: none; color: var(--light-gold); font-size: 1.4rem; cursor: pointer; padding: 0.5rem; }
+  /* When the menu is explicitly opened, switch to a stacked dropdown for easier tapping */
   .nav.open { display: flex; position: absolute; left: 0; right: 0; top: 100%; background: linear-gradient(180deg, rgba(10,14,42,0.98), rgba(10,14,42,0.98)); flex-direction: column; gap: 0.5rem; padding: 1rem 1.5rem; z-index: 1100; box-shadow: 0 8px 40px rgba(2,6,20,0.6); }
   .nav.open a { color: var(--platinum); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
   .hero .container { grid-template-columns: 1fr; gap: 2.5rem; }
