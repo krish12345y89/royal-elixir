@@ -1923,3 +1923,155 @@ input, textarea, select { border-radius: 12px; border: 1px solid rgba(10,14,42,0
     outline-offset: 2px;
   }
 }
+/* ===== MOBILE DARK THEME FIX ===== */
+/* Force dark backgrounds on mobile */
+@media (max-width: 767px) {
+  body {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--sapphire) 100%) !important;
+    color: var(--platinum) !important;
+  }
+
+  /* Fix all section backgrounds */
+  .skin-types {
+    background: linear-gradient(135deg, var(--royal-blue) 0%, var(--sapphire) 100%) !important;
+  }
+
+  .featured-products {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%) !important;
+  }
+
+  .routine-builder {
+    background: linear-gradient(135deg, var(--sapphire) 0%, var(--royal-blue) 100%) !important;
+  }
+
+  /* Fix text colors for mobile */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--light-gold) !important;
+  }
+
+  p, li, .small {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* Fix card backgrounds */
+  .skin-type-card,
+  .product-card,
+  .routine-step {
+    background: rgba(10, 14, 42, 0.8) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 169, 106, 0.3) !important;
+    color: var(--platinum) !important;
+  }
+
+  /* Text inside cards */
+  .skin-type-card h3,
+  .product-name,
+  .product-brand,
+  .routine-step h3 {
+    color: var(--light-gold) !important;
+  }
+
+  .skin-type-card p,
+  .routine-step p,
+  .product-brand,
+  .rating-value {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Fix product price color */
+  .product-price {
+    color: var(--gold) !important;
+  }
+
+  /* Fix filter buttons */
+  .filter-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--light-gold) !important;
+    border: 1px solid rgba(201, 169, 106, 0.3) !important;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+  }
+
+  /* Fix input fields */
+  .email-input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--light-gold) !important;
+    border: 1px solid rgba(201, 169, 106, 0.3) !important;
+  }
+
+  .email-input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+}
+
+/* ===== EMERGENCY MOBILE DARK FIX ===== */
+/* If above doesn't work, use this more aggressive approach */
+@media (max-width: 767px) {
+  * {
+    background-color: transparent !important;
+  }
+
+  body {
+    background: #0A0E2A !important;
+    background-image: none !important;
+  }
+
+  .skin-types,
+  .featured-products,
+  .routine-builder {
+    background: #0A0E2A !important;
+    background-image: none !important;
+  }
+
+  /* Ensure all cards have dark background */
+  .skin-type-card,
+  .product-card,
+  .routine-step {
+    background: rgba(26, 35, 126, 0.9) !important;
+  }
+
+  /* Force white/gold text */
+  h1, h2, h3, h4, h5, h6,
+  .skin-type-card h3,
+  .product-name,
+  .routine-step h3 {
+    color: #E8D9B5 !important;
+  }
+
+  p, li, .small,
+  .skin-type-card p,
+  .routine-step p,
+  .product-brand {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
+/* ===== SPECIFIC ELEMENT OVERRIDES ===== */
+/* Fix specific elements that might be causing issues */
+@media (max-width: 767px) {
+  /* Remove any light gradients */
+  .skin-types:before,
+  .featured-products:before {
+    background: linear-gradient(90deg, transparent, var(--gold), var(--royal-blue), transparent) !important;
+  }
+
+  /* Fix product image background */
+  .product-image {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 100%) !important;
+  }
+
+  /* Fix badge colors */
+  .product-badge {
+    background: linear-gradient(135deg, var(--emerald) 0%, #1A535C 100%) !important;
+    color: var(--light-gold) !important;
+  }
+
+  /* Fix stars color */
+  .stars {
+    color: var(--gold) !important;
+  }
+}
