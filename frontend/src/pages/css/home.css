@@ -2075,3 +2075,26 @@ input, textarea, select { border-radius: 12px; border: 1px solid rgba(10,14,42,0
     color: var(--gold) !important;
   }
 }
+
+/* ===== OFFCANVAS / MOBILE NAV CONTRAST FIX ===== */
+@media (max-width: 767px) {
+  /* Cover a few possible mobile nav class names used in components */
+  .nav.offcanvas a,
+  .offcanvas a,
+  .mobile-nav a,
+  .nav a {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    font-size: 1.05rem !important;
+    letter-spacing: 0.4px !important;
+  }
+
+  /* Remove subtle decorative underlines that could reduce contrast */
+  .nav.offcanvas a:after,
+  .offcanvas a:after,
+  .mobile-nav a:after,
+  .nav a:after {
+    background: none !important;
+  }
+}
